@@ -1,15 +1,12 @@
-FROM python:3.7.2-slim
-LABEL maintainer="Tomer Levi @MrTomerLevi"
+FROM python:3
+
+WORKDIR /usr/src/app
 
 EXPOSE 8052
 
-WORKDIR /app
-COPY requirements.txt .
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --upgrade pip
-RUN pip install streamlit
-RUN pip install -r requirements.txt
+COPY . .
 
-COPY ./src /examples
-ENTRYPOINT [ "streamlit", "run"]
-CMD ["/examples/intro.py"]
+CMD [ "python", "./your-daemon-or-script.py" ]
