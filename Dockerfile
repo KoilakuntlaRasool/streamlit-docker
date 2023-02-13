@@ -1,7 +1,7 @@
 FROM python:3.7.2-slim
 LABEL maintainer="Tomer Levi @MrTomerLevi"
 
-EXPOSE 8501
+EXPOSE 8000
 
 WORKDIR /app
 COPY requirements.txt .
