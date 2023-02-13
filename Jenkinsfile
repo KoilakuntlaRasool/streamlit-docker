@@ -14,7 +14,7 @@ pipeline {
            }
            stage('Run Image') {
                 steps {
-                sh 'sudo docker run -d -p 8000:8000 --name tomerlevi/streamlit-docker tomerlevi/streamlit-docker:latest'
+                sh 'sudo docker run -d -p 8052:8052 --name tomerlevi/streamlit-docker tomerlevi/streamlit-docker:latest'
                 }
            }
            stage('Testing'){
